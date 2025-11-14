@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      window.global = window;
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search</title>
+
+    <script type="module" crossorigin src="/goit-advancedjs-hw-03-/assets/index-D2eV1Ina.js"></script>
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-03-/assets/index-SpJO5pp3.css">
+  </head>
+
+
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <form id="search-form" class="search-form">
+          <input
+            type="text"
+            name="query"
+            class="search-input"
+            placeholder="Search images..."
+          />
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div id="loader" class="loader hidden"></div>
+        <ul class="gallery"></ul>
+      </div>
+    </main>
+
+  </body>
+</html>
