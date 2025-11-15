@@ -1,41 +1,31 @@
-export function createGalleryMarkup(images) {
-  return images
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) => `
+// src/js/render-functions.js
+
+// Сбрасывает содержимое галереи
+export function clearGallery(galleryEl) {
+  if (galleryEl) galleryEl.innerHTML = '';
+}
+
+// Генерит разметку карточек из массива hits
+export function createGalleryMarkup(items = []) {
+  return items.map(
+    ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
       <li class="gallery-item">
         <a class="gallery-link" href="${largeImageURL}">
-          <img
-            class="gallery-image"
-            src="${webformatURL}"
-            alt="${tags}"
-            loading="lazy"
-          />
+          <img class="gallery-image" src="${webformatURL}" alt="${tags}" loading="lazy"/>
         </a>
-
-        <div class="info">
-          <p class="info-item"><b>Likes</b> ${likes}</p>
-          <p class="info-item"><b>Views</b> ${views}</p>
-          <p class="info-item"><b>Comments</b> ${comments}</p>
-          <p class="info-item"><b>Downloads</b> ${downloads}</p>
-        </div>
-      </li>
-      `
-    )
-    .join('');
+        <ul class="card-stats">
+          <li><span>Likes</span>${likes}</li>
+          <li><span>Views</span>${views}</li>
+          <li><span>Comments</span>${comments}</li>
+          <li><span>Downloads</span>${downloads}</li>
+        </ul>
+      </li>`
+  ).join('');
 }
 
-export function clearGallery(container) {
-  container.innerHTML = '';
-}
-
-export function renderGallery(container, markup) {
-  container.innerHTML = markup;
+// Вставляет готовую строку разметки в галерею одной операцией
+export function renderGallery(galleryEl, markup) {
+  if (galleryEl && markup) {
+    galleryEl.insertAdjacentHTML('beforeend', markup);
+  }
 }
