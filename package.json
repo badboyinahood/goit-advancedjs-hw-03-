@@ -11,7 +11,8 @@
     "vite": "^7.2.2"
   },
   "dependencies": {
-    "simplelightbox": "2.14.1",
-    "izitoast": "^1.4.0"
+    "axios": "^1.13.2",
+    "izitoast": "^1.4.0",
+    "simplelightbox": "2.14.1"
   }
 }

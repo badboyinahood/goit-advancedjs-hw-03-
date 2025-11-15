@@ -17,24 +17,19 @@
   <body>
     <header class="header">
       <div class="container">
-        <form id="search-form" class="search-form">
-          <input
-            type="text"
-            name="query"
-            class="search-input"
-            placeholder="Search images..."
-          />
-          <button type="submit" class="search-btn">Search</button>
+        <form class="form search-form" id="search-form" autocomplete="off">
+          <input class="form__input search-input" type="text" name="query" placeholder="Search images..." />
+          <button class="search-btn" type="submit">Search</button>
         </form>
       </div>
     </header>
 
     <main>
       <div class="container">
-        <div id="loader" class="loader hidden"></div>
+        <span class="loader hidden" aria-live="polite">Loading…</span>
         <ul class="gallery"></ul>
       </div>
-    </main>
+    </main> 
 
     <script type="module" src="./main.js"></script>
   </body>
